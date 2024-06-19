@@ -19,3 +19,22 @@ const getDivision = (a,b)=>{
   const division = a/b
   return division
 }
+
+
+const displayElement = document.getElementById("display")
+const inputDisplayElement = document.getElementById("input-display")
+const calculateButtonElement = document.getElementById("calculate")
+
+if(!displayElement)console.warn('not found "id" from "displayElement"')
+if(!inputDisplayElement)console.warn('not found "id" from "inputDisplayElement"')
+if(!calculateButtonElement)console.warn('not found "id" from "calculateButtonElement"')
+
+  
+  const getResult=()=>{
+    console.log('result')
+  }
+
+  // inputDisplayElement.addEventListener("onchange", (e)=>console.log(e.target.value))
+
+  calculateButtonElement.addEventListener('click', getResult())
+  displayElement.addEventListener('submit', (e)=>e.preventDefault())
