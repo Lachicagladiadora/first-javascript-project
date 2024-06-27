@@ -53,28 +53,24 @@ if(!number0ButtonElement)console.warn('not found "id" from "number0ButtonElement
     console.log('result')
   }
 
+  const numbers = [0,1,2,3,4,5,6,7,8,9]
+  const constants = ['pi', 'e']
+  const valueconst = {'pi': 22/7, 'e': 2.718}
+
   const onChange = (e)=>{
     const value = e.target.value
     console.log({value})
+    if(numbers.some(value)) return value
+    if(constants.some(value)) return valueconst[value]
+    // if()
+    else return value= ''
   }
-
-  const write = (number)=>{
-    return number
-  }
-
 
 inputDisplayElement.addEventListener('input', (e)=>onChange(e))
+// inputDisplayElement.addEventListener('keyup', e=>{
+//   if(e.code === null) return''
+//   if(e.code === undefined) return ''
+//   if(typeof(e.code) === Number)return e.code
+// })
 calculateButtonElement.addEventListener('click', getResult)
 displayElement.addEventListener('submit', (e)=>e.preventDefault())
-
-number1ButtonElement.addEventListener('click', ()=>write(1))
-number2ButtonElement.addEventListener('click', ()=>write(2))
-number3ButtonElement.addEventListener('click', ()=>write(3))
-number4ButtonElement.addEventListener('click', ()=>write(4))
-number5ButtonElement.addEventListener('click', ()=>write(5))
-number6ButtonElement.addEventListener('click', ()=>write(6))
-number7ButtonElement.addEventListener('click', ()=>write(7))
-number8ButtonElement.addEventListener('click', ()=>write(8))
-number9ButtonElement.addEventListener('click', ()=>write(9))
-number0ButtonElement.addEventListener('click', ()=>write(0))
-
