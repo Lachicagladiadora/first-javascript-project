@@ -60,17 +60,8 @@ if(!number0ButtonElement)console.warn('not found "id" from "number0ButtonElement
   const onChange = (e)=>{
     const value = e.target.value
     console.log({value})
-    if(numbers.some(value)) return value
-    if(constants.some(value)) return valueconst[value]
-    // if()
-    else return value= ''
   }
 
 inputDisplayElement.addEventListener('input', (e)=>onChange(e))
-// inputDisplayElement.addEventListener('keyup', e=>{
-//   if(e.code === null) return''
-//   if(e.code === undefined) return ''
-//   if(typeof(e.code) === Number)return e.code
-// })
 calculateButtonElement.addEventListener('click', getResult)
 displayElement.addEventListener('submit', (e)=>e.preventDefault())
