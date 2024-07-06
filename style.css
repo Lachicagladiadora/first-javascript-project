@@ -43,8 +43,19 @@ body{
   }
   &:hover{
     background-color: #318b4c;
-
+    
   }
+}
+
+.button{
+  box-shadow: 1px 1px 10px #181818af;
+
+}
+
+.other{
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 .number{
