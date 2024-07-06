@@ -30,6 +30,21 @@ body{
 
 .input-display{
   padding: 10px;
+  border-radius: 8px;
+  box-shadow: inset 1px 1px 10px #181818af;
+  color: #181818;
+  font-weight: bolder;
+  font-size: x-large;
+  font-family: monospace;
+  background-color: #244a2f;
+  &:focus{
+    outline: none;
+    background-color: #247e3f;
+  }
+  &:hover{
+    background-color: #318b4c;
+
+  }
 }
 
 .number{
