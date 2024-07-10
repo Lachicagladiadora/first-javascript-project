@@ -49,6 +49,8 @@ if(!number8ButtonElement)console.warn('not found "id" from "number8ButtonElement
 if(!number9ButtonElement)console.warn('not found "id" from "number9ButtonElement"')
 if(!number0ButtonElement)console.warn('not found "id" from "number0ButtonElement"')
   
+// let INPUT_VALUE
+
   const getResult=()=>{
     console.log('result')
   }
@@ -63,6 +65,7 @@ if(!number0ButtonElement)console.warn('not found "id" from "number0ButtonElement
   }
 
   const writeNumber=(e)=>{
+    value = e.target
     console.log('number', e)
   }
 
@@ -70,13 +73,15 @@ inputDisplayElement.addEventListener('input', (e)=>onChange(e))
 calculateButtonElement.addEventListener('click', getResult)
 displayElement.addEventListener('submit', (e)=>e.preventDefault())
 
-number1ButtonElement.addEventListener('click', (e)=>writeNumber(e))
-number2ButtonElement.addEventListener('click', (e)=>writeNumber(e))
-number3ButtonElement.addEventListener('click', (e)=>writeNumber(e))
-number4ButtonElement.addEventListener('click', (e)=>writeNumber(e))
-number5ButtonElement.addEventListener('click', (e)=>writeNumber(e))
-number6ButtonElement.addEventListener('click', (e)=>writeNumber(e))
-number7ButtonElement.addEventListener('click', (e)=>writeNumber(e))
-number8ButtonElement.addEventListener('click', (e)=>writeNumber(e))
-number9ButtonElement.addEventListener('click', (e)=>writeNumber(e))
-number0ButtonElement.addEventListener('click', (e)=>writeNumber(e))
+number1ButtonElement.addEventListener('keydown', (e)=>{
+  console.log(e)
+})
+number2ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
+number3ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
+number4ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
+number5ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
+number6ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
+number7ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
+number8ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
+number9ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
+number0ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
