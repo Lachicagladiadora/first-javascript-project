@@ -66,7 +66,7 @@ if(!number0ButtonElement)console.warn('not found "id" from "number0ButtonElement
 
   const writeNumber=(e)=>{
     value = e.target
-    console.log('number', e)
+    console.log('number', e, {value})
   }
 
 inputDisplayElement.addEventListener('input', (e)=>onChange(e))
