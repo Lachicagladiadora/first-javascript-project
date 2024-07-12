@@ -1,26 +1,4 @@
-console.log('Hello, world');
-
-const getAddition = (a, b) => {
- const addition = a+b
- return addition
-}
-
-const getSubtract = (a,b) => {
- const subtract = a-b
-return subtract
-}
-
-const getMultiplication = (a,b) =>{
-  const multiplication = a * b
-  return multiplication
-}
-
-const getDivision = (a,b)=>{
-  const division = a/b
-  return division
-}
-
-
+const containElement = document.getElementById("contain")
 const inputDisplayElement = document.getElementById("input-display")
 const calculateButtonElement = document.getElementById("calculate")
 const displayElement = document.getElementById("display")
@@ -48,33 +26,65 @@ if(!number7ButtonElement)console.warn('not found "id" from "number7ButtonElement
 if(!number8ButtonElement)console.warn('not found "id" from "number8ButtonElement"')
 if(!number9ButtonElement)console.warn('not found "id" from "number9ButtonElement"')
 if(!number0ButtonElement)console.warn('not found "id" from "number0ButtonElement"')
-  
-// let INPUT_VALUE
 
-  const getResult=()=>{
-    console.log('result')
-  }
+const getAddition = (a, b) => {
+ const addition = a+b
+ return addition
+}
 
-  const numbers = [0,1,2,3,4,5,6,7,8,9]
-  const constants = ['pi', 'e']
-  const valueconst = {'pi': 22/7, 'e': 2.718}
+const getSubtract = (a,b) => {
+ const subtract = a-b
+return subtract
+}
 
-  const onChange = (e)=>{
-    const value = e.target.value
-    console.log({value})
-  }
+const getMultiplication = (a,b) =>{
+  const multiplication = a * b
+  return multiplication
+}
 
-  const writeNumber=(e)=>{
-    value = e.target
-    console.log('number', e, {value})
-  }
+const getDivision = (a,b)=>{
+  const division = a/b
+  return division
+}
 
+  // const numbers = [0,1,2,3,4,5,6,7,8,9]
+  // const constants = ['pi', 'e']
+  // const valueconst = {'pi': 22/7, 'e': 2.718}
+
+const onChange = (e)=>{
+  const value = e.target.value
+  console.log({value})
+}
+
+const writeNumber=(e)=>{
+  value = e.target
+  console.log('number', e, {value})
+}
+
+const onSubmit = (e)=> {
+  e.preventDefault()
+  const input = displayElement.get(inputDisplayElement)
+  console.log({input})
+}
+
+const getResult=(e)=>{
+  console.log('result')
+  onSubmit(e)
+}
+
+
+// containElement.addEventListener('submit', onSubmit(e))
 inputDisplayElement.addEventListener('input', (e)=>onChange(e))
-calculateButtonElement.addEventListener('click', getResult)
-displayElement.addEventListener('submit', (e)=>e.preventDefault())
+// calculateButtonElement.addEventListener('click', getResult(e))
+// displayElement.addEventListener('click', (e)=>{
+//   e.preventDefault()
+// })
 
 number1ButtonElement.addEventListener('keydown', (e)=>{
-  console.log(e)
+  if(e.value === 1) return 1
+  console.log({e})
+  // const input = displayElement.get(inputDisplayElement)
+  // input = 1
 })
 number2ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
 number3ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
