@@ -2,6 +2,7 @@ const containElement = document.getElementById("contain")
 const inputDisplayElement = document.getElementById("input-display")
 const calculateButtonElement = document.getElementById("calculate")
 const displayElement = document.getElementById("display")
+
 const number1ButtonElement = document.getElementById("number1")
 const number2ButtonElement = document.getElementById("number2")
 const number3ButtonElement = document.getElementById("number3")
@@ -16,6 +17,7 @@ const number0ButtonElement = document.getElementById("number0")
 if(!inputDisplayElement)console.warn('not found "id" from "inputDisplayElement"')
 if(!calculateButtonElement)console.warn('not found "id" from "calculateButtonElement"')
 if(!displayElement)console.warn('not found "id" from "displayElement"')
+  
 if(!number1ButtonElement)console.warn('not found "id" from "number1ButtonElement"')
 if(!number2ButtonElement)console.warn('not found "id" from "number2ButtonElement"')
 if(!number3ButtonElement)console.warn('not found "id" from "number3ButtonElement"')
@@ -73,19 +75,13 @@ const getResult=(e)=>{
 }
 
 
-// containElement.addEventListener('submit', onSubmit(e))
 inputDisplayElement.addEventListener('input', (e)=>onChange(e))
-// calculateButtonElement.addEventListener('click', getResult(e))
-// displayElement.addEventListener('click', (e)=>{
-//   e.preventDefault()
-// })
 
 number1ButtonElement.addEventListener('keydown', (e)=>{
   if(e.value === 1) return 1
   console.log({e})
-  // const input = displayElement.get(inputDisplayElement)
-  // input = 1
 })
+
 number2ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
 number3ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
 number4ButtonElement.addEventListener('keydown', (e)=>writeNumber(e))
