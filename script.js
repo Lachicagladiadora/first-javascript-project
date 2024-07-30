@@ -79,42 +79,22 @@ const onChange = (e)=>{
   onWrite(possibleValue)
   
   console.log({INPUT_VALUE})
-  // return INPUT_VALUE
 }
 
-// const onFocus = (e)=>{
-//   console.log({e})
-//   e.isTrusted = true
-// }
 
 const onWrite=(value)=>{
-// if(!INPUT_VALUE) {inputDisplayElement.value = value}
-// else{
+//  debe ejecutarse el onChange
   INPUT_VALUE.push(value)
   inputDisplayElement.value = "".concat(...INPUT_VALUE)
   
   console.log({INPUT_VALUE}, '3')
-
-// }
-
-  // console.log('number', e, {value})
-  // onFocus(e)
-  // onChange(e)
-}
-
-const onSubmit = ()=> {
-  // e.preventDefault()
-  console.log("fui enviado")
-  // const input = displayElement.get(inputDisplayElement)
-  // console.log({input})
 }
 
 const getResult=()=>{
   inputDisplayElement.value = "wally"
-console.log({INPUT_VALUE}, '4')
+  console.log({INPUT_VALUE}, '4')
 
   console.log('result')
-  // onSubmit(e)
 }
 
 // que en el input se escriba lo que se presiona con los botones
