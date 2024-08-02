@@ -68,7 +68,7 @@ const getDivision = (a,b)=>{
   return division
 }
 
-  // const numbers = [0,1,2,3,4,5,6,7,8,9]
+  const NUMBERS = ["0","1","2","3","4","5","6","7","8","9"]
   // const constants = ['pi', 'e']
   // const valueconst = {'pi': 22/7, 'e': 2.718}
 
@@ -92,15 +92,14 @@ const onWrite=(value)=>{
   console.log({INPUT_VALUE}, '3')
 }
 
-const onPressKeybord = (e, value)=>{
-console.log({e},{value})
+const onPressKeybord = (e)=>{
+console.log({e})
 e.preventDefault()
 const keyPress = e.key
-if (keyPress === Number(value)) {
-  console.log('seva')
-  onWrite(value)
+if (NUMBERS.includes(keyPress)) {
+  onWrite(keyPress)
 } else {
-  console.log('wally')
+  console.log('planta and NaN')
 }
 
 
@@ -156,9 +155,7 @@ number7ButtonElement.addEventListener("click", ()=>onWrite('7'))
 number8ButtonElement.addEventListener("click", ()=>onWrite('8'))
 number9ButtonElement.addEventListener("click", ()=>onWrite('9')) 
 
-
-document.addEventListener("keypress", ()=>console.log("eva y wally"))
-// window.addEventListener("keypress", ()=>console.log("wally y eva"))
+window.addEventListener("keypress", (e)=>onPressKeybord(e))
 
 additionButtonElement.addEventListener("click", ()=>onWrite('+'))
 subtractionButtonElement.addEventListener("click", ()=>onWrite('-'))
