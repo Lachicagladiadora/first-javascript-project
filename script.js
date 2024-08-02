@@ -81,13 +81,29 @@ const onChange = (e)=>{
   console.log({INPUT_VALUE})
 }
 
+// al navegador atar un evnto key down
+
 
 const onWrite=(value)=>{
 //  debe ejecutarse el onChange
   INPUT_VALUE.push(value)
-  inputDisplayElement.value = "".concat(...INPUT_VALUE)
+  inputDisplayElement.innerText = "".concat(...INPUT_VALUE)
   
   console.log({INPUT_VALUE}, '3')
+}
+
+const onPressKeybord = (e, value)=>{
+console.log({e},{value})
+e.preventDefault()
+const keyPress = e.key
+if (keyPress === Number(value)) {
+  console.log('seva')
+  onWrite(value)
+} else {
+  console.log('wally')
+}
+
+
 }
 
 const getResult=()=>{
@@ -127,7 +143,7 @@ const onClean = ()=>{
 // que sume decimales
 
 // inputDisplayElement.value = value
-inputDisplayElement.addEventListener("input", (e)=>onChange(e))
+// inputDisplayElement.innerText
 
 number0ButtonElement.addEventListener("click", ()=>onWrite('0'))
 number1ButtonElement.addEventListener("click", ()=>onWrite('1'))
@@ -138,7 +154,11 @@ number5ButtonElement.addEventListener("click", ()=>onWrite('5'))
 number6ButtonElement.addEventListener("click", ()=>onWrite('6'))
 number7ButtonElement.addEventListener("click", ()=>onWrite('7'))
 number8ButtonElement.addEventListener("click", ()=>onWrite('8'))
-number9ButtonElement.addEventListener("click", ()=>onWrite('9'))
+number9ButtonElement.addEventListener("click", ()=>onWrite('9')) 
+
+
+document.addEventListener("keypress", ()=>console.log("eva y wally"))
+// window.addEventListener("keypress", ()=>console.log("wally y eva"))
 
 additionButtonElement.addEventListener("click", ()=>onWrite('+'))
 subtractionButtonElement.addEventListener("click", ()=>onWrite('-'))
