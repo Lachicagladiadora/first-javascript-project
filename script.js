@@ -81,11 +81,7 @@ const onChange = (e)=>{
   console.log({INPUT_VALUE})
 }
 
-// al navegador atar un evnto key down
-
-
 const onWrite=(value)=>{
-//  debe ejecutarse el onChange
   INPUT_VALUE.push(value)
   inputDisplayElement.innerText = "".concat(...INPUT_VALUE)
   
@@ -101,23 +97,17 @@ if (NUMBERS.includes(keyPress)) {
 } else {
   console.log('planta and NaN')
 }
-
-
 }
 
 const getResult=()=>{
   inputDisplayElement.value = "wally"
   console.log({INPUT_VALUE}, '4')
-
   console.log('result')
 }
-
-// que en el input se escriba lo que se presiona con los botones
 
 const onDelete= ()=>{
   INPUT_VALUE.pop()
   inputDisplayElement.value = "".concat(...INPUT_VALUE)
-
 }
 
 const onClean = ()=>{
@@ -131,18 +121,11 @@ const onClean = ()=>{
   inputDisplayElement.value = ''.concat(...INPUT_VALUE)
 }
 
-// que no se pierda foco del input al presionar fuera de este
-// hacer que funcionen los botones para escibir en el input
-
-
 // que funcione el boton de borrar
 // que funcione el boton igual
 // que funcione el boton de limpiar input
 
 // que sume decimales
-
-// inputDisplayElement.value = value
-// inputDisplayElement.innerText
 
 number0ButtonElement.addEventListener("click", ()=>onWrite('0'))
 number1ButtonElement.addEventListener("click", ()=>onWrite('1'))
