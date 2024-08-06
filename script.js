@@ -73,9 +73,9 @@ const getDivision = (a,b)=>{
   // const valueconst = {'pi': 22/7, 'e': 2.718}
 
 const onChange = (e)=>{
-  console.log({e}, "event", e.data)
+  // console.log({e}, "event", e.data)
   const possibleValue = (e.target.value)
-  console.log({possibleValue})
+  // console.log({possibleValue})
   onWrite(possibleValue)
   
   console.log({INPUT_VALUE})
@@ -84,19 +84,16 @@ const onChange = (e)=>{
 const onWrite=(value)=>{
   INPUT_VALUE.push(value)
   inputDisplayElement.innerText = "".concat(...INPUT_VALUE)
-  
-  console.log({INPUT_VALUE}, '3')
+  // console.log({INPUT_VALUE}, '3')
 }
 
 const onPressKeybord = (e)=>{
-console.log({e})
+// console.log({e})
 e.preventDefault()
 const keyPress = e.key
 if (NUMBERS.includes(keyPress)) {
   onWrite(keyPress)
-} else {
-  console.log('planta and NaN')
-}
+} else return
 }
 
 const getResult=()=>{
