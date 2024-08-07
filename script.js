@@ -68,44 +68,41 @@ const getDivision = (a,b)=>{
   return division
 }
 
-  const NUMBERS = ["0","1","2","3","4","5","6","7","8","9"]
+  const NUMBERS = ["0","1","2","3","4","5","6","7","8","9", "."]
+  const SIGNS = ['+', "-", "*", "/", "%", "√", "÷", "×"]
+  const DELETE_KEYBOARD = ["Backspace", "Delete"]
+  const EQUAL = ['Enter', "="]
   // const constants = ['pi', 'e']
   // const valueconst = {'pi': 22/7, 'e': 2.718}
-
-const onChange = (e)=>{
-  // console.log({e}, "event", e.data)
-  const possibleValue = (e.target.value)
-  // console.log({possibleValue})
-  onWrite(possibleValue)
-  
-  console.log({INPUT_VALUE})
-}
 
 const onWrite=(value)=>{
   INPUT_VALUE.push(value)
   inputDisplayElement.innerText = "".concat(...INPUT_VALUE)
-  // console.log({INPUT_VALUE}, '3')
+  console.log({INPUT_VALUE}, 'onWrite')
 }
 
 const onPressKeybord = (e)=>{
-// console.log({e})
-e.preventDefault()
-const keyPress = e.key
-if (NUMBERS.includes(keyPress)) {
-  onWrite(keyPress)
-} else return
+  console.log({e})
+  e.preventDefault()
+  const keyPress = e.key
+  if (NUMBERS.includes(keyPress)) onWrite(keyPress)
+  if(SIGNS.includes(keyPress)) onWrite(keyPress)
+  if(DELETE_KEYBOARD.includes(keyPress)) onDelete()
+  if(EQUAL.includes(keyPress)) getResult()
 }
 
 const getResult=()=>{
-  inputDisplayElement.value = "wally"
+  inputDisplayElement.innerText = "wally"
   console.log({INPUT_VALUE}, '4')
   console.log('result')
 }
 
 const onDelete= ()=>{
   INPUT_VALUE.pop()
-  inputDisplayElement.value = "".concat(...INPUT_VALUE)
+  inputDisplayElement.innerText= "".concat(...INPUT_VALUE)
 }
+ 
+console.log({INPUT_VALUE})
 
 const onClean = ()=>{
   const lenght = INPUT_VALUE.length
@@ -113,14 +110,10 @@ const onClean = ()=>{
     for(let i = 0; i < lenght; i++){
       INPUT_VALUE.pop()
     }
-    inputDisplayElement.value = ''.concat(...INPUT_VALUE)
+    inputDisplayElement.innerText = ''.concat(...INPUT_VALUE)
   }
-  inputDisplayElement.value = ''.concat(...INPUT_VALUE)
+  inputDisplayElement.innerText = ''.concat(...INPUT_VALUE)
 }
-
-// que funcione el boton de borrar
-// que funcione el boton igual
-// que funcione el boton de limpiar input
 
 // que sume decimales
 
